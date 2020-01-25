@@ -35,7 +35,11 @@ module.exports = {
                     "sass-loader", // Convert SCSS to css.
                     "postcss-loader"
                 ]
-            }
+            },
+            {
+                test: /\.png(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader'
+            },
         ]
     },
 

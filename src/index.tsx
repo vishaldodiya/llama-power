@@ -1,9 +1,9 @@
 import * as React from "react";
 import {render} from "react-dom";
 
-import Container from "./components/container";
+import Homepage from "./components/homepage";
 
 render(
-    <Container></Container>,
+    <Homepage></Homepage>,
     document.getElementById("llama-power")
 );

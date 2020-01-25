@@ -1,6 +1,29 @@
+@import "./variables.scss";
+
 .container {
+    background-image: linear-gradient(-90deg, #4CA1AF, #C4E0E5);
     display: flex;
-    background-color: black;
-    width: 1200px;
-    height: 1000px;
+    justify-content: center;
+    align-items: center;
+    margin: 90px 0 0 0;
+    width: 100%;
+    height: 60vh;
+    border-radius: 5px;
+    padding: 60px 0;
+
+    @media (min-width: $sm) {
+        max-width: auto;
+    }
+
+    @media (min-width: $md) {
+        max-width: 720px;
+    }
+
+    @media (min-width: $lg) {
+        max-width: 992px;
+    }
+
+    @media (min-width: $xl) {
+        max-width: 1140px;
+    }
 }
