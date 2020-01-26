@@ -1,36 +1,21 @@
 import * as React from "react";
 import "../includes/question.scss";
 
-const Question = () => {
+const Question = React.forwardRef((props: any, ref: any) => {
     return(
-        <article className="question">
-            <h2>Who is Llama?</h2>
-
-            <label className="question__option" htmlFor="radio-1">
-                Radio 1
-                <input type="radio" name="radio" value="Radio 1" id="radio-1"/>
-                <span className="question__radio"></span>
-            </label>
-
-            <label className="question__option" htmlFor="radio-2">
-                Radio 2
-                <input type="radio" name="radio" value="Radio 1" id="radio-2"/>
-                <span className="question__radio"></span>
-            </label>
-
-            <label className="question__option" htmlFor="radio-3">
-                Radio 3
-                <input type="radio" name="radio" value="Radio 1" id="radio-3"/>
-                <span className="question__radio"></span>
-            </label>
-
-            <label className="question__option" htmlFor="radio-4">
-                Radio 4 
-                <input type="radio" name="radio" value="Radio 1" id="radio-4"/>
-                <span className="question__radio"></span>
-            </label>
+        <article ref={ref} className="question">
+            <h2>{ props.data.question }</h2>
+            {
+                props.data.answeres.map((answer: string, index: number) => (
+                    <label key={"que-" + props.index + "-ans-" + index} className="question__option" htmlFor={"que-" + props.index + "-ans-" + index}>
+                        {answer}
+                        <input type="radio" name={"que-" + props.index + "-ans"} value={index} id={"que-" + props.index + "-ans-" + index}/>
+                        <span className="question__radio"></span>
+                    </label>
+                ))
+            }
         </article>
     );
-}
+});
 
 export default Question;
