@@ -1,6 +1,7 @@
 import * as React from "react";
 import Container from "./container";
 import Navbar from "./navbar";
+import Footer from "./footer";
 import "../assets/styles/homepage.scss";
 
 const Homepage = () => {
@@ -8,6 +9,7 @@ const Homepage = () => {
         <>
             <Navbar></Navbar>
             <Container></Container>
+            <Footer></Footer>
         </>
     );
 }
