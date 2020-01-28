@@ -1,7 +1,7 @@
 import * as React from "react";
 import Container from "./container";
 import Navbar from "./navbar";
-import "../includes/homepage.scss";
+import "../assets/styles/homepage.scss";
 
 const Homepage = () => {
     return (
