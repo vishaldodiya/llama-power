@@ -1,8 +1,8 @@
 import * as React from "react";
 import {HashRouter as Router, Link, Switch, Route} from "react-router-dom";
 import Quiz from "./quiz";
+import Result from "./result";
 import "../assets/styles/container.scss";
-import "../assets/styles/util.scss";
 
 const Container = () => {
 
@@ -28,7 +28,7 @@ const Container = () => {
                         <Quiz onSubmit={updateResult}></Quiz>
                     </Route>
                     <Route exact path="/result">
-                        {result}
+                        <Result score={result}></Result>
                     </Route>
                 </Switch>
             </div>

@@ -3,7 +3,6 @@ import { useParams } from "react-router";
 import {HashRouter as Router, Link} from "react-router-dom";
 import llamaQuestions from "./llama-questions";
 import "../assets/styles/quiz.scss";
-import "../assets/styles/util.scss";
 
 const Quiz = (props: any) => {
 
@@ -30,7 +29,7 @@ const Quiz = (props: any) => {
     return(
         <div className="quiz">
             <div style={{width: `${id*10}%`}} className="quiz__progress-bar"></div>
-            <article className="quiz__question">
+            <article className="quiz__question quiz--animate">
                 <h2 className="util--grey">{ question.question }</h2>
                 {
                     question.answeres.map((answer: string, index: number) => (

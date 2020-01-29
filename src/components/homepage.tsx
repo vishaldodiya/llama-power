@@ -3,6 +3,7 @@ import Container from "./container";
 import Navbar from "./navbar";
 import Footer from "./footer";
 import "../assets/styles/homepage.scss";
+import "../assets/styles/util.scss";
 
 const Homepage = () => {
     return (
