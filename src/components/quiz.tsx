@@ -4,9 +4,9 @@ import {HashRouter as Router, Link} from "react-router-dom";
 import llamaQuestions from "./llama-questions";
 import "../assets/styles/quiz.scss";
 
-const Quiz = (props: any) => {
+const Quiz = () => {
 
-    const [selected, setSelected] = React.useState([]);
+    const [selected, setSelected] = React.useState(JSON.parse(sessionStorage.getItem("quizAttempt")) || []);
 
     let {queId} = useParams();
     let id: number = Number(queId);
@@ -15,9 +15,12 @@ const Quiz = (props: any) => {
     const submitScore = () => {
         let score = 0;
         for (let i = 0; i < 10; i++) {
-            if (selected[i] == llamaQuestions[id].correct) score++;
+            if (selected[i] == llamaQuestions[i].correct) score++;
         }
-        props.onSubmit(score);
+        if (window.sessionStorage) {
+            sessionStorage.setItem("quizAttempt", JSON.stringify(selected));
+            sessionStorage.setItem("quizScore", JSON.stringify(score));
+        }
     };
 
     const updateSelected = (answer: number) => {
@@ -43,7 +46,7 @@ const Quiz = (props: any) => {
             </article>
             <div className="quiz__action">
                 {
-                    (id > 0 && id < 9) ? <Link className="util__btn" to={`/quiz/${id - 1}`}>Back</Link> : null
+                    (id > 0) ? <Link className="util__btn" to={`/quiz/${id - 1}`}>Back</Link> : null
                 }
                 <Link onClick={id >= 9 ? () => submitScore(): null} className="util__btn" to={id >= 9 ? `/result` : `/quiz/${id+1}`}>{id >= 9 ? "Submit" : "Next"}</Link>
             </div>

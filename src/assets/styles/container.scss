@@ -27,6 +27,20 @@
     }
 
     &__intro {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
         text-align: center;
+        align-items: center;
+
+        h1 {
+            font-size: 50px;
+            margin-top: auto;
+        }
+
+        h4 {
+            font-size: 20px;
+            margin-bottom: auto;
+        }
     }
 }

@@ -1,12 +1,19 @@
 .result {
     text-align: center;
     font-weight: 600;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
     &__text {
         font-size: 50px;
+        margin-top: auto;
     }
 
     &__score {
         font-size: 100px;
+        margin-bottom: auto;
     }
 
     &__action {
