@@ -17,7 +17,7 @@ const Container = () => {
                             ) : (
                                 <section className="container__intro">
                                     <h1 className="util--grey">Test Your Llama Power!</h1>
-                                    <h4 className="util--grey">The Quiz contains 10 set of questions which will test your Llama knowledge and give result of your Llama power.</h4>
+                                    <h4 className="util--grey">The Quiz contains set of 10 questions which will test your Llama knowledge and give result of your Llama power.</h4>
                                     <Link to="/quiz/0" className="util__btn">Start</Link>
                                 </section>
                             )

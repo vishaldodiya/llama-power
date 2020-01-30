@@ -74,7 +74,7 @@ const Quiz = () => {
                 {
                     (id > 0) ? <Link className="util__btn" to={`/quiz/${id - 1}`}>Back</Link> : null
                 }
-                <Link onClick={id >= 9 ? () => submitScore(): null} className="util__btn" to={id >= 9 ? `/result` : `/quiz/${id+1}`}>{id >= 9 ? "Submit" : "Next"}</Link>
+                <Link onClick={id >= 9 ? () => submitScore(): null} className="util__btn" to={id >= 9 ? `/result` : `/quiz/${id+1}`}>{id >= 9 ? isReview ? "Result" : "Submit" : "Next"}</Link>
             </div>
         </div>
     );

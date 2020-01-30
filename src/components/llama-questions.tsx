@@ -53,7 +53,7 @@ const llamaQuestion = [
             "Fortnite",
             "Minecraft",
             "FIFA",
-            "Vicious Attack Llama Apocaplypse"
+            "VALA"
         ],
         correct: 2
     },
