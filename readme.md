@@ -6,6 +6,10 @@ Know your Llama Power by giving an interesting 10 question quiz. After giving qu
 * [TypeScript](https://www.typescriptlang.org/)
 * [Webpack](https://webpack.js.org/)
 
+## Logos From
+* https://caluyadesign.com/free-llama-faces-svg/
+* https://icons8.com/icons/set/github
+
 ## Author
 
 * **Vishal Dodiya** - [vishaldodiya](https://github.com/vishaldodiya)
