@@ -13,4 +13,18 @@
     &--grey {
         color: #3d3d3d;
     }
+
+    &--correct {
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 3px solid #1e5632;
+        border-radius: 30px;
+        padding-right: 10px;
+    }
+
+    &--wrong {
+        border: 3px solid #9c1122;
+        border-radius: 30px;
+        padding-right: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
 }

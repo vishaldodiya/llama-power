@@ -20,7 +20,15 @@ const Result = (props: any) => {
 
         sessionStorage.removeItem("quizAttempt");
         sessionStorage.removeItem("quizScore");
-        return true;
+        sessionStorage.removeItem("quizReview");
+    }
+
+    const setReview = () => {
+        if (!window.sessionStorage) {
+            return false;
+        }
+
+        sessionStorage.setItem("quizReview", "1");
     }
 
     return(
@@ -32,7 +40,7 @@ const Result = (props: any) => {
                 {`${getScore()} / 10`}
             </div>
             <div className="result__action">
-                <Link className="util__btn" to="/quiz/0">Review</Link>
+                <Link onClick={() => setReview()} className="util__btn" to="/quiz/0">Review</Link>
                 <Link onClick={() => clearSession()} className="util__btn" to="/">Retake</Link>
             </div>
         </div>

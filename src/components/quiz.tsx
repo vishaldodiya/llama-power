@@ -11,22 +11,36 @@ const Quiz = () => {
     let {queId} = useParams();
     let id: number = Number(queId);
     let question = llamaQuestions[id];
+    let isReview = Boolean( "1" == sessionStorage.getItem("quizReview") );
 
     const submitScore = () => {
         let score = 0;
         for (let i = 0; i < 10; i++) {
             if (selected[i] == llamaQuestions[i].correct) score++;
         }
-        if (window.sessionStorage) {
-            sessionStorage.setItem("quizAttempt", JSON.stringify(selected));
-            sessionStorage.setItem("quizScore", JSON.stringify(score));
-        }
+
+        sessionStorage.setItem("quizAttempt", JSON.stringify(selected));
+        sessionStorage.setItem("quizScore", JSON.stringify(score));
     };
 
     const updateSelected = (answer: number) => {
         let list = selected;
         list[id] = answer;
         setSelected(list);
+    }
+
+    const reviewClass = (index: number) => {
+        if (isReview) {
+            if (selected[id] == index) {
+                if ( index == llamaQuestions[id].correct ) {
+                    return "util--correct";
+                } else {
+                    return "util--wrong";
+                }
+            } else if ( index == llamaQuestions[id].correct ) {
+                return "util--correct";
+            }
+        }
     }
 
     return(
@@ -36,9 +50,21 @@ const Quiz = () => {
                 <h2 className="util--grey">{ question.question }</h2>
                 {
                     question.answeres.map((answer: string, index: number) => (
-                        <label key={"que-" + queId + "-ans-" + index} className="quiz__option util--grey" htmlFor={"que-" + queId + "-ans-" + index}>
+                        <label
+                            key={"que-" + queId + "-ans-" + index}
+                            className={`quiz__option util--grey ${reviewClass(index)}`}
+                            htmlFor={"que-" + queId + "-ans-" + index}
+                        >
                             {answer}
-                            <input defaultChecked={selected[id] == index ? true : false} onClick={() => updateSelected(index)} type="radio" name={"que-" + queId + "-ans"} value={index} id={"que-" + queId + "-ans-" + index}/>
+                            <input
+                                defaultChecked={selected[id] == index ? true : false}
+                                onClick={() => updateSelected(index)}
+                                type="radio"
+                                name={"que-" + queId + "-ans"}
+                                value={index}
+                                id={"que-" + queId + "-ans-" + index}
+                                disabled={isReview}
+                            />
                             <span className="quiz__radio"></span>
                         </label>
                     ))
