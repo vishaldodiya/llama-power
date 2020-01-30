@@ -1,8 +1,7 @@
 import * as React from "react";
 import { useParams } from "react-router";
 import {HashRouter as Router, Link} from "react-router-dom";
-import llamaQuestions from "./llama-questions";
-import "../assets/styles/quiz.scss";
+import llamaQuestions from "../assets/llama-questions";
 
 const Quiz = () => {
 

@@ -2,7 +2,6 @@ import * as React from "react";
 import {HashRouter as Router, Link, Switch, Route, Redirect} from "react-router-dom";
 import Quiz from "./quiz";
 import Result from "./result";
-import "../assets/styles/container.scss";
 
 const Container = () => {
 

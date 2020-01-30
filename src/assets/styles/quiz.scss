@@ -1,5 +1,3 @@
-@import "./variables.scss";
-
 .quiz {
     display: flex;
     width: 100%;
@@ -13,7 +11,7 @@
     }
 
     &__progress-bar {
-        background-image: linear-gradient(90deg, #e96443, #904e95);
+        background: linear-gradient(90deg, $orange_grad, $violet_grad);
         width: 0%;
         max-width: 100%;
         height: 10px;
@@ -55,7 +53,7 @@
             width: 0;
 
             &:checked ~ .quiz__radio {
-                background-image: linear-gradient(90deg, #e96443, #904e95);
+                background: linear-gradient(90deg, $orange_grad, $violet_grad);
                 &:after {
                     display: block;
                 }

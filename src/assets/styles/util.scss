@@ -1,6 +1,6 @@
 .util {
     &__btn {
-        background-image: linear-gradient(90deg, #e96443, #904e95);
+        background: linear-gradient(90deg, $orange_grad, $violet_grad);
         padding: 10px 50px;
         border-radius: 30px;
         color: #f0dbd3;
